@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  $('.checkbox input[type=checkbox').click(function (){
+    var current_record = $(this).parents('tr');
+    $(current_record).children('.text').toggleClass('text_decor', 'text')
+  });
   $('.deleteAction').hover( function (){
     $(this).css('opacity', '1');
   }, function (){

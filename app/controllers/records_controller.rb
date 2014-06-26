@@ -23,9 +23,11 @@ class RecordsController < ApplicationController
 
     respond_to do |format|
       if @record.save
+        format.js
         format.html { redirect_to records_url }
         format.json { render :show, status: :created, location: @record }
       else
+        format.js
         format.html { render :index }
         format.json { render json: @record.errors, status: :unprocessable_entity }
       end
